@@ -2,5 +2,36 @@
 
 
 {% block content %}
-<h1>Address Book</h1>
+
+<div class='container'>
+    <div class="row">
+    
+        {% for address in all_addresses %}
+
+            <div class="col-sm">
+                <div class="card" style="width: 18rem;">
+                    <div class="card-body">
+                        <h5 class="card-title">{{ address.name }}</h5>
+                        <p class="card-text">
+                            {{ address.name }}<br/>
+                            {{ address.email }}<br/>
+                            {{ address.phone }}<br/>
+                            {{ address.address }}<br/>
+                            {{ address.city }}<br/>
+                            {{ address.state }}<br/>
+                            {{ address.zipcode }}<br/>
+                        </p>
+                        <a href="#" class="btn btn-primary">Edit</a>
+                    </div>
+                </div>
+                <br/>
+            </div>
+        {% endfor %}
+
+
+    </div>
+</div>
+
+
+
 {% endblock content %}
